@@ -1,31 +1,14 @@
-<div align="center">
+# CLIProxyAPI credential check
 
-  <img src="docs/images/social-preview.png" alt="CLIProxyAPI credential check" width="100%">
+[中文](README.md) · English
 
-  # CLIProxyAPI credential check
+View the enabled or disabled state of account credentials in [CLIProxyAPI](https://github.com/router-for-me/CLIProxyAPI), with optional health and quota checks to help manage multiple accounts.
 
-  [中文](README.md) · English
+**Requirements:** Python 3.10+. Real-account use requires an existing CLIProxyAPI installation and management key. The dashboard is read-only with masked accounts by default; live probing and disable/restore actions must be enabled separately.
 
-  [![CI](https://github.com/ferretgeek/cliproxyapi-credential-check/actions/workflows/ci.yml/badge.svg)](https://github.com/ferretgeek/cliproxyapi-credential-check/actions/workflows/ci.yml)
-  [![CodeQL](https://github.com/ferretgeek/cliproxyapi-credential-check/actions/workflows/codeql.yml/badge.svg)](https://github.com/ferretgeek/cliproxyapi-credential-check/actions/workflows/codeql.yml)
-  [![Python 3.10+](https://img.shields.io/badge/Python-3.10%2B-287f87)](https://www.python.org/)
-  [![License: MIT](https://img.shields.io/badge/License-MIT-5f7f55.svg)](LICENSE)
+[Try the local demo](#see-it-in-three-minutes) · [Connect your installation](docs/DEPLOYMENT.md) · [Compatibility](docs/COMPATIBILITY.md)
 
-  [Deployment](docs/DEPLOYMENT.md) · [Security boundary](docs/SECURITY-BOUNDARY.md) · [Compatibility](docs/COMPATIBILITY.md)
-
-</div>
-
-> Which credentials in your CLIProxyAPI pool still work, and which ones should be replaced?
-
-## Why this exists
-
-Run a [CLIProxyAPI](https://github.com/router-for-me/CLIProxyAPI) credential pool long enough and it turns into a pile of files you're afraid to touch: thirty credentials, a vague memory of which few are good, and no confidence to delete or use the rest.
-
-Working it out means opening config files one by one, reading logs, and firing test requests — every step of which carries risk, whether that's deleting a credential still in use or leaving a token in your shell history.
-
-This dashboard has a deliberately narrow job: **inventory the pool's enablement state and health signals, and present them fully masked.** Disabling and restoring happen here too, but each action requires typing an exact confirmation phrase.
-
-It is **read-only by default.** Disable and restore are capabilities the operator must explicitly enable, not buttons you get for free.
+Live probing uses an unofficial compatibility endpoint that may break when upstream changes. Inventory and enablement reporting remain available with probing off.
 
 ## Interface
 

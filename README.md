@@ -1,31 +1,14 @@
-<div align="center">
+# CLIProxyAPI 账号检查工具
 
-  <img src="docs/images/social-preview.png" alt="CLIProxyAPI 凭证体检" width="100%">
+中文 · [English](README_EN.md)
 
-  # CLIProxyAPI 凭证体检
+集中查看 [CLIProxyAPI](https://github.com/router-for-me/CLIProxyAPI) 中账号登录凭证的启用状态，按需检查健康和额度信息，方便整理多个账号。
 
-  中文 · [English](README_EN.md)
+**使用前提：** Python 3.10+；连接真实账号需要已部署的 CLIProxyAPI 及管理密钥。默认只读，账号信息遮罩显示；实时探测和停用、恢复操作需单独开启。
 
-  [![CI](https://github.com/ferretgeek/cliproxyapi-credential-check/actions/workflows/ci.yml/badge.svg)](https://github.com/ferretgeek/cliproxyapi-credential-check/actions/workflows/ci.yml)
-  [![CodeQL](https://github.com/ferretgeek/cliproxyapi-credential-check/actions/workflows/codeql.yml/badge.svg)](https://github.com/ferretgeek/cliproxyapi-credential-check/actions/workflows/codeql.yml)
-  [![Python 3.10+](https://img.shields.io/badge/Python-3.10%2B-287f87)](https://www.python.org/)
-  [![License: MIT](https://img.shields.io/badge/License-MIT-5f7f55.svg)](LICENSE)
+[先看本地演示](#三分钟看见它) · [连接真实环境](docs/部署说明.md) · [兼容性说明](docs/兼容性.md)
 
-  [部署](docs/部署说明.md) · [安全边界](docs/安全边界.md) · [兼容性](docs/兼容性.md)
-
-</div>
-
-> CLIProxyAPI 里那一堆账号，哪个还能用、哪个该换了？
-
-## 为什么会需要它
-
-用 [CLIProxyAPI](https://github.com/router-for-me/CLIProxyAPI) 管一个凭证池，时间长了就会变成一堆你不敢动的文件：三十个凭证，你只记得大概哪几个是好的，剩下的既不敢删也不敢用。
-
-要判断状态，得挨个翻配置文件、看日志、试请求。而且这中间任何一步都有风险——手滑删掉一个还在用的凭证，或者把 Token 打进终端历史里。
-
-这个面板做的事很窄：**盘点凭证池的启用状态和健康信号，用完整的遮罩呈现给你。** 想停用哪个、想恢复哪个，也在这里做，但要逐次输入精确的确认短语。
-
-它**默认只读**。停用和恢复是部署者必须显式打开的能力，不是默认送你的按钮。
+实时探测使用非官方的兼容接口，可能随上游变化失效；关闭探测仍可查看凭证清单与启用状态。
 
 ## 界面
 
